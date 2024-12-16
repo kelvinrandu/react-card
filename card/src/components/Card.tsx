@@ -1,26 +1,29 @@
 // import { StarIcon } from '@chakra-ui/icons'
 import { Box, Image, Badge } from '@chakra-ui/react'
 
-export function Card() {
-    const property = {
-        imageUrl: 'https://bit.ly/2Z4KKcF',
-        imageAlt: 'Rear view of modern home with pool',
-        beds: 3,
-        baths: 2,
-        title: 'Chill Spot',
-        formattedPrice: '1km',
-        reviewCount: 34,
-        rating: 4,
-    }
+type Iprops = {
+    name?: string;
+    src?: string;
+    badge?: string;
+    alt?: string;
+    distance?: string;
+    rating?: number;
+    reviewCount?: number;
+};
+export function Card(props: Iprops) {
+
+    const { name, src, alt, badge, distance, rating, reviewCount } = props
+
+
 
     return (
         <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
-            <Image h={100} width={'100%'} src={property.imageUrl} alt={property.imageAlt} />
+            <Image h={100} width={'100%'} src={src ? src : 'https://bit.ly/2Z4KKcF'} alt={alt ? alt : 'Rear view of modern home with pool'} />
 
             <Box p='4'>
                 <Box display='flex' alignItems='baseline'>
-                    <Badge borderRadius='full' px='2' colorScheme='teal'>
-                        Restaurants
+                    <Badge borderRadius='full' px='2' colorScheme='teal.500'>
+                        {badge ? badge : 'restaurants'}
                     </Badge>
 
                 </Box>
@@ -32,17 +35,18 @@ export function Card() {
                     lineHeight='tight'
 
                 >
-                    {property.title}
+                    {name ? name : 'Chill Spot'}
                 </Box>
 
                 <Box>
 
                     <Box as='span' fontSize='xs' color='gray.600' >
-                        1 km away
+                        {distance ? distance : '1 km away'}
                     </Box>
                 </Box>
 
                 <Box display='flex' mt='2' alignItems='center'>
+                    {rating ? rating : 5}
                     {/* {Array(5)
               .fill('')
               .map((_, i) => (
@@ -52,7 +56,7 @@ export function Card() {
                 />
               ))} */}
                     <Box as='span' ml='2' color='gray.600' fontSize='sm'>
-                        {property.reviewCount} reviews
+                        {reviewCount ? reviewCount : 34} reviews
                     </Box>
                 </Box>
             </Box>

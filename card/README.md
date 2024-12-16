@@ -4,84 +4,43 @@ This is a card template library designed with [React](https://react.dev)  and  [
 
 ## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+    npm i @randukelvin/react-card
+    yarn add @randukelvin/react-card
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
 ## Usage
 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+You can use it as follows:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
 ```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+import { Card } from '@randukelvin/react-card'
+
+function App() {
+
+
+  return <Card name='Chill Spot' src='https://bit.ly/2Z4KKcF' alt='Rear view of modern home' badge='restaurants' rating={5} reviewCount={34} />
+}
+
+export default App
+
+
+
+
 ```
+
+## Props
+
+| Props        | Type        | Description |
+| ------------- |:-------------:| -----:|
+| name   |   string  |  name of product      | 
+| src   |  string   |  image source      | 
+| badge   |  string   |  string to be shown in badge    | 
+| alt   |   string  |  alt string of image    | 
+| distance   | string    |  distance i.e 1km away      | 
+| rating   | number    |  1-5     | 
+| reviewCount   | number    |  review number    | 

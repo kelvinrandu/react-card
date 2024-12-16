@@ -1,7 +1,7 @@
 {
-  "name": "card",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@randukelvin/react-card",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -33,5 +33,9 @@
     "typescript-eslint": "^8.15.0",
     "vite": "^6.0.3",
     "vite-tsconfig-paths": "^5.1.4"
-  }
+  },
+  "author": "Kelvin Randu",
+  "license": "MIT",
+  "homepage": "https://github.com/kelvinrandu/react-card",
+  "github":{"url":"https://github.com/kelvinrandu/react-card"}
 }
